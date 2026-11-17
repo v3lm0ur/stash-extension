@@ -1,0 +1,35 @@
+.stash-axiom-translate-control {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 22px;
+  margin: 5px 0;
+  padding: 0 10px;
+  border: 1px solid rgba(46, 232, 154, 0.42);
+  border-radius: 4px;
+  background: rgba(10, 18, 13, 0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(46, 232, 154, 0.08);
+  color: #2ee89a;
+  font: 700 10.5px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease, box-shadow 0.14s ease;
+}
+.stash-axiom-translate-control:hover {
+  background: rgba(46, 232, 154, 0.16);
+  border-color: #55f7b2;
+  color: #f0f7f2;
+  box-shadow: 0 0 12px rgba(46, 232, 154, 0.24);
+}
+.stash-axiom-translate-control:focus-visible {
+  outline: 1px solid #2ee89a;
+  outline-offset: 2px;
+}
+.stash-axiom-translate-control:disabled {
+  opacity: 0.58;
+  cursor: wait;
+}

@@ -1,0 +1,190 @@
+{
+  "manifest_version": 3,
+  "name": "STASH Extension",
+  "short_name": "STASH",
+  "version": "1.0.0",
+  "description": "Independent Solana trading tools for Axiom and X.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "storage",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "STASH",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "settings.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "lastath/bridge-loader.js",
+        "lastath/content.js"
+      ],
+      "css": [
+        "lastath/styles.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "migration/content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "stretch/inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "stretch/content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "usernames/community-api.js",
+        "usernames/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "devglow/content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "pump-twitter/content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "pump-twitter/social-age.js"
+      ],
+      "run_at": "document_end",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ],
+      "js": [
+        "translator/axiom.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "css": [
+        "translator/translator.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*"
+      ],
+      "js": [
+        "translator/x.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lastath/page-bridge.js",
+        "devglow/glow.js"
+      ],
+      "matches": [
+        "https://axiom.trade/*",
+        "https://*.axiom.trade/*"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-stretch": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Вкл/выкл Axiom Stretch"
+    }
+  },
+  "host_permissions": [
+    "https://api.axiom.trade/*",
+    "https://*.axiom.trade/*",
+    "https://frontend-api-v3.pump.fun/*",
+    "https://solana-rpc.publicnode.com/*",
+    "https://api.mainnet-beta.solana.com/*",
+    "https://ipfs.io/*",
+    "https://cloudflare-ipfs.com/*",
+    "https://gateway.pinata.cloud/*",
+    "https://*.mypinata.cloud/*",
+    "https://translate.googleapis.com/*",
+    "https://openrouter.ai/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.anthropic.com/*",
+    "https://api.groq.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

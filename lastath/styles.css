@@ -1,0 +1,10 @@
+/* STASH LastATH — crisp, compact Pulse overlay */
+.alh-layer{position:fixed;inset:0;z-index:2147483647;pointer-events:none;overflow:hidden;contain:layout paint style;opacity:1}
+.alh-history{position:absolute;left:0;top:0;display:grid;grid-template-columns:max-content max-content;column-gap:9px;row-gap:1px;color:#d7ded9;font:600 11px/14px Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;text-rendering:geometricPrecision}
+.alh-heading{color:#9aa69e;font:600 9px/12px Arial,Helvetica,sans-serif;letter-spacing:.025em}
+.alh-ath{color:#edf2ee;font-weight:700}
+.alh-history[data-alh-highlight="true"] .alh-ath{color:var(--alh-ath-color,#edf2ee)}
+.alh-fees{display:flex;align-items:center;justify-content:flex-end;gap:3px;color:#d7ded9}
+.alh-fees-value{font:600 11px/14px Arial,Helvetica,sans-serif}
+.alh-sol{color:#a0aaa3;font:500 9px/12px Arial,Helvetica,sans-serif}
+.alh-history[data-alh-fees-highlight="true"] .alh-fees-value{color:var(--alh-fees-color,#d7ded9)}
